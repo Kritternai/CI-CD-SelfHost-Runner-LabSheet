@@ -960,10 +960,8 @@ tail -f ~/actions-runner/_diag/Runner_*.log
 2. ควรเห็น runner แสดงสถานะ **Idle** สีเขียว
 
   ### บันทึกรูปผลการทดลอง
-  ```
-  บันทึกรูปหน้า Runners โดยคัดลอกให้เห็น Account ของ GitHub และ Repository
-  ```
-
+ ![alt text](<img/Screenshot 2568-12-23 at 09.22.48.png>)
+![alt text](<img/Screenshot 2568-12-23 at 09.33.11.png>)
 
 ### ส่วนที่ 7: ทดสอบ CI/CD Pipeline
 
@@ -1057,9 +1055,7 @@ docker logs nodejs-selfhosted-app
 ```
 
 ### บันทึกผลการรันคำสั่ง docker logs nodejs-selfhosted-app
-```txt
-บันทึกรูปผลการรันคำสั่ง
-```
+![alt text](<img/Screenshot 2568-12-23 at 09.27.09.png>)
 
 ### ส่วนที่ 8: Monitoring และ Troubleshooting 
 
@@ -1142,9 +1138,7 @@ chmod +x monitor.sh
 watch -n 10 ./monitor.sh
 ```
 ### บันทึกผลการรัน monitor.sh
-```txt
-บันทึกรูปผลการรันคำสั่ง
-```
+![alt text](<img/Screenshot 2568-12-23 at 09.28.06.png>)
 
 ## สรุปจุดสำคัญ
 
@@ -1186,51 +1180,31 @@ watch -n 10 ./monitor.sh
 ### 1. Pull-based Model ของ Self-Hosted Runner คืออะไร มีข้อดีอย่างไร
 
 <details>
-<summary>คำตอบ</summary>
-
- เขียนคำตอบลงในช่องนี้
-
-
+<summary>-Runner เป็นฝ่ายดึงงานจาก GitHub ทำการ Polling โดยมีข้อดีคือ ไม่ต้องเปิด Port ไม่ต้องมี Static IP</summary>
 </details>
 
 ### 2. ทำไม Pull-based ปลอดภัยกว่า Push-based
 
 <details>
-<summary>คำตอบ</summary>
-
- เขียนคำตอบลงในช่องนี้
-
-
+<summary>-ไม่ต้องเปิด Port ให้โลกภายนอก และRunner เป็นฝ่ายเชื่อมต่อออกไปหา GitHub เพื่อความปลอดภัย</summary>
 </details>
 
 ### 3. ทำไมต้องใช้ npm ci แทน npm install ใน production
 
 <details>
-<summary>คำตอบ</summary>
-
- เขียนคำตอบลงในช่องนี้
-
-
+<summary>-เร็วกว่า npm install โดยต้องมี ต้องมี package-lock.json และให้ผลเหมือนกันทุกครั้ง</summary>
 </details>
 
 ### 4. ทำไมห้ามใช้ Self-Hosted Runner กับ Public Repository
 
 <details>
-<summary>คำตอบ</summary>
-
- เขียนคำตอบลงในช่องนี้
-
-
+<summary>ใครก็ได้สามารถสร้าง workflow ที่รันบน Runner ของ Repo ได้</summary>
 </details>
 
 
 ### 5. nginx คืออะไร และการทำ Revers Proxy ใน nginx มีความสำคัญอย่างไร
 <details>
-<summary>คำตอบ</summary>
-
- เขียนคำตอบลงในช่องนี้
-
-
+<summary>แยก frontend/backend โดยNginx รับ request จาก client ส่งต่อไปยัง backend application อีกทั้งยังสามารถทำ Load balancing ได้</summary>
 </details>
 ---
 
